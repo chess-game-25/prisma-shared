@@ -1,0 +1,19 @@
+{
+  "name": "chess-prisma-shared",
+  "version": "1.0.4",
+  "module": "index.ts",
+  "type": "module",
+  "files": [
+    "prisma/schema.prisma"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.15.0",
+    "prisma": "^6.15.0"
+  }
+}
