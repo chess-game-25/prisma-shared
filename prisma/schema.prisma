@@ -35,10 +35,10 @@ model User {
 
 model Game {
   id         String   @id @default(uuid())
-  blackPlayerId    String
+  blackPlayerId    String?
   whitePlayerId    String
   whitePlayer      User     @relation("GamesAsWhite", fields: [whitePlayerId], references: [id])
-  blackPlayer      User     @relation("GamesAsBlack", fields: [blackPlayerId], references: [id])
+  blackPlayer      User?     @relation("GamesAsBlack", fields: [blackPlayerId], references: [id])
   status        GameStatus
   result     GameResult? 
 
