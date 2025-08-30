@@ -37,9 +37,9 @@ model Game {
   id         String   @id @default(uuid())
   blackPlayerId    String
   whitePlayerId    String
-  whitePlayer User     @relation("GamesAsWhite", fields: [whitePlayerId], references: [id])
+  whitePlayer      User     @relation("GamesAsWhite", fields: [whitePlayerId], references: [id])
   blackPlayer      User     @relation("GamesAsBlack", fields: [blackPlayerId], references: [id])
-
+  status        GameStatus
   result     GameResult? 
 
   startAt       DateTime   @default(now())
@@ -51,3 +51,11 @@ enum GameResult {
   BLACK_WINS
   DRAW
 } 
+
+enum GameStatus {
+  IN_PROGRESS
+  COMPLETED
+  ABANDONED
+  TIME_UP
+  PLAYER_EXIT
+}
